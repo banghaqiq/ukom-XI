@@ -1,0 +1,25 @@
+{% extends "layout/core.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid ">
+ <div class="row justify-content-md-center text-start position-absolute top-50 start-50 translate-middle">
+  
+     <div class="col-md-12 " align="center">
+      
+      <h1>Detail Siswa</h1>
+      <p><strong>NIUP:</strong> {{ siswa.niup }}</p>
+      <p><strong>Nama:</strong> {{ siswa.nama }}</p>
+      <p><strong>Alamat:</strong> {{ siswa.alamat }}</p>
+      <a class="btn btn-primary" href="{% url 'siswa_edit' pk=siswa.pk %}">Edit</a>
+      <form action="{% url 'siswa_delete' pk=siswa.pk %}" method="post" style="display: inline;">
+          {% csrf_token %}
+          <input type="submit" class="btn btn-danger" value="Delete">
+      </form>
+      <a class="btn btn-secondary" href="{% url 'beranda' %}">Kembali ke Daftar Siswa</a>
+     </div>
+ </div>
+</div>
+</div>
+{% endblock content %}
+ 

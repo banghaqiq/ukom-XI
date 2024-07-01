@@ -1,0 +1,70 @@
+{% extends "layout/core.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="header mb-3 mt-3">
+ <h1 class="text-center">DATA SISWA</h1>
+ <h2 class="text-center">SEKOLAH MENENGAH KEJURUAN NURUL JADID</h2>
+</div>
+
+
+<div class="container-fluid">
+ <div class="row justify-content-beetwen mb-2">
+  <div class="col-6">
+   {% comment %} berikan contoh link django ke file html {% endcomment %}
+
+   <a href="{% url 'siswa_new' %}">
+    <button type="button" class="btn btn-primary">Tambahkan Data +</button>
+   </a>
+   </div>
+   {% comment %} <div class="col-6 justify-content-end " style="width: 400px;">
+   <form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+   </form>
+   </div> {% endcomment %}
+ </div>
+</div>
+
+<div class="container-fluid text-center align-middle" >
+
+ <table class="table table-hover" border="1">
+  <thead>
+    <tr>
+      <th scope="col">Niup</th>
+      <th scope="col">Nama</th>
+      <th scope="col">Alamat</th>
+      <th scope="col">Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for siswa in siswa %}
+    <tr>
+      <td>{{ siswa.niup }}</td>
+      <td>{{ siswa.nama }}</td>
+      <td>{{ siswa.alamat }}</td>
+      <td class="justify-content-center ">
+     <a href="{% url 'siswa_edit' pk=siswa.pk %}">
+      <button type="button" class="btn btn-warning">Edit</button>
+     </a>
+     <a href="{% url 'siswa_delete' pk=siswa.pk %}">
+      <button type="button" class="btn btn-danger">Delete</button>
+     </a>
+     <a href="{% url 'siswa_detail' pk=siswa.pk %}">
+      <button type="button" class="btn btn-info">Detail</button>
+     </a>
+      
+      </td>
+      
+       
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+{% endblock content %}
+ 

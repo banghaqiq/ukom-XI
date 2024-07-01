@@ -1,0 +1,41 @@
+{% extends "layout/core.html" %}
+{% load static %}
+
+
+{% block content %}
+ <div class="container-fluid">
+    <div class="row justify-content-md-center">
+     
+        <div class="col-md-8" align="center">
+         
+            <div class="card card-body text-start"style=" width:50%;">
+             <h3 align="center">Tambahkan Nama</h3>
+                <form action="" method="POST" >
+                    <div class="mb-2">
+                     
+                      <label for="" class="form-label">Niup</label>
+                      <input type="text" class="form-control" >
+                     
+                    </div>
+                    <div class="mb-2">
+                     
+                      <label for="" class="form-label">Nama</label>
+                      <input type="text" class="form-control">
+                     
+                    </div>
+                    <div class="mb-2">
+                     
+                      <label for="" class="form-label">alamat</label>
+                      <input type="text" class="form-control">
+                     
+                    </div>
+                    <br>
+                    <input type="submit" value="save" class="btn btn-primary">
+                    <input type="reset" value="reset" class="btn btn-danger">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+ 

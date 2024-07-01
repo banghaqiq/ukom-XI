@@ -1,0 +1,25 @@
+{% extends 'layout/core.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid ">
+ <div class="row justify-content-md-center text-start position-absolute top-50 start-50 translate-middle">
+     <div class="col-md-12 " align="center">
+      <h1>Konfirmasi Hapus Siswa</h1>
+      <p>Apakah Anda yakin ingin menghapus siswa "{{ siswa.nama }}"?</p>
+       <div class="row ">
+        <form method="post">
+         {% csrf_token %}
+         <input type="submit" class="btn btn-danger" value="Hapus">
+        <a href="{% url 'beranda' %}" class="btn btn-secondary">Batal</a>
+        </form>
+        
+       </div>
+      </div>
+     </div>
+ </div>
+</div>
+</div>
+{% endblock content %}
+ 

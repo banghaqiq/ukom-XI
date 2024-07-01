@@ -1,0 +1,25 @@
+{% extends "layout/core.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+ <div class="row justify-content-md-center">
+  
+     <div class="col-md-8" align="center">
+      
+         <div class="card card-body text-start position-absolute top-50 start-50 translate-middle"style=" width:50%;">
+          <h1 align="center">{% if form.instance.pk %}Edit Siswa{% else %}Tambah Siswa{% endif %}</h1>
+          <form method="post" >
+             {% csrf_token %}
+             {{ form.as_p }}
+             <button type="submit" class="btn btn-primary" value="Simpan">Simpan</button>
+             <a href="{% url 'beranda' %}" class="btn btn-danger">Batal</a>
+          </form>
+         </div>
+     </div>
+ </div>
+</div>
+</div>
+{% endblock content %}
+ 
